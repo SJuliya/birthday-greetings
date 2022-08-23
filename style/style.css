@@ -29,11 +29,17 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #FFF1F8;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-bottom: 17px;
+}
+
+.men {
+    background-color: #EFF9FE;
+}
+
+.women {
+    background-color: #FFF1F8;
 }
 
 button {
@@ -63,23 +69,39 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
+}
+
+.header__button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header__button-wrapper_change-card {
+    gap: 30px;
+}
+
+.header__button-wrapper_change-gender {
+    gap: 20px;
 }
 
 .header__button-change {
     width: 300px;
     height: 65px;
-    background: #C300C7;
     border-radius: 30px;
     border: none;
     font-weight: 700;
     font-size: 18px;
     color: #FFFFFF;
-    margin-right: 30px;
     padding: 0;
 }
 
-.header__button-change:last-child {
-    margin-right: 0;
+.men .header__button-change {
+    background: #1178B2;
+}
+
+.women .header__button-change {
+    background: #C300C7;
 }
 
 .header__button-gender {
@@ -92,12 +114,7 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 36px;
-    margin-right: 20px;
     padding: 0;
-}
-
-.header__button-gender:last-child {
-    margin-right: 0;
 }
 
 .header__button-gender_men {
@@ -109,9 +126,18 @@ img {
     background-image: url("../image/women.svg");
 }
 
+
+.men .header__button-gender_men {
+    border-color: #1178B2;
+}
+
+.women .header__button-gender_women {
+    border-color: #C300C7;
+}
+
 .card {
     flex-grow: 1;
-    padding: 32px 0;
+    padding: 32px 0 15px;
     display: flex;
     align-items: center;
 }
@@ -134,8 +160,20 @@ img {
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: max(3em, min(calc(100vw * 3 / (840 / 3 / 2)), 6em));
-    font-family: 'Bad Script', sans-serif;
     line-height: 1.7;
+}
+
+.women .card__text {
+    font-family: 'Bad Script', sans-serif;
+}
+
+.men .card__text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.footer {
+    padding: 17px 0;
 }
 
 .footer__container {
@@ -148,17 +186,11 @@ img {
     margin: 0 0 8px 0;
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
     color: #000000;
 }
 
 .footer__copyrights > p:last-child {
     margin: 0;
-}
-
-.footer__copyrights-copyright {
     font-size: 14px;
     line-height: 19px;
 }
@@ -166,17 +198,19 @@ img {
 .footer__social {
     display: flex;
     height: 36px;
+    gap: 16px;
 }
 .footer__social-link {
     text-decoration: none;
-    color: #5273C8;
-    margin-right: 16px;
 }
 
-.footer__social-link:last-child {
-    margin-right: 0;
+.men .footer__social-link {
+    color: #1178B2;
 }
 
+.women .footer__social-link {
+    color: #C300C7;
+}
 
 @media (max-width: 880px) {
     .container {
@@ -184,8 +218,6 @@ img {
     }
 
     .header__button-wrapper {
-        display: flex;
-        flex-wrap: wrap;
         gap: 30px;
     }
 
@@ -201,5 +233,16 @@ img {
         height: 40px;
         background-size: 30px;
         margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer__copyrights {
+        order: 1;
     }
 }
