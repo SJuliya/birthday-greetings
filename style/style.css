@@ -94,14 +94,24 @@ img {
     font-size: 18px;
     color: #FFFFFF;
     padding: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.header__button-change:hover {
+    opacity: .8;
+}
+
+.header__button-change:active {
+    outline: 2px solid #FFFFFF;
+    outline-offset: -5px;
 }
 
 .men .header__button-change {
-    background: #1178B2;
+    background-color: #1178B2;
 }
 
 .women .header__button-change {
-    background: #C300C7;
+    background-color: #C300C7;
 }
 
 .header__button-gender {
@@ -115,11 +125,19 @@ img {
     background-position: center;
     background-size: 36px;
     padding: 0;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.men .header__button-gender:hover {
+    background-color: #EFF9FE;
+}
+
+.women .header__button-gender:hover {
+    background-color: #FFF1F8;
 }
 
 .header__button-gender_men {
     background-image: url("../image/men.svg");
-
 }
 
 .header__button-gender_women {
@@ -157,10 +175,10 @@ img {
 .card__text {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 47%;
     transform: translate(-50%, -50%);
     font-size: max(3em, min(calc(100vw * 3 / (840 / 3 / 2)), 6em));
-    line-height: 1.7;
+    line-height: 1.6
 }
 
 .women .card__text {
@@ -200,8 +218,14 @@ img {
     height: 36px;
     gap: 16px;
 }
+
 .footer__social-link {
     text-decoration: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer__social-link:hover {
+    opacity: .6;
 }
 
 .men .footer__social-link {
